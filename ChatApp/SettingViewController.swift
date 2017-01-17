@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
+  var backgroundImage: UIImage?
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var profileNameLabel: UILabel!
   override func viewDidLoad() {
@@ -22,28 +23,37 @@ class SettingViewController: UIViewController {
       let decodedImage = UIImage(data: decodedData! as Data)
       
       profileImageView.image = decodedImage
-      profileNameLabel.text = UserDefaults.standard.object(forKey: "name") as! String
+      profileNameLabel.text = UserDefaults.standard.object(forKey: "name") as? String
     }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   @IBAction func openAlbum(_ sender: Any) {
+    let sourceType: UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
+    if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+      let cameraPicker = UIImagePickerController()
+      cameraPicker.sourceType = sourceType
+      cameraPicker.delegate = self
+      self.present(cameraPicker, animated: true, completion: nil)
+    }
   }
+  
   @IBAction func launchCamera(_ sender: Any) {
+    let sourceType: UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
+    if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+      let cameraPicker = UIImagePickerController()
+      cameraPicker.sourceType = sourceType
+      cameraPicker.delegate = self
+      self.present(cameraPicker, animated: true, completion: nil)
+    }
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      backgroundImage = pickedImage
+    }
+    picker.dismiss(animated: true, completion: nil)
+  }
 }
