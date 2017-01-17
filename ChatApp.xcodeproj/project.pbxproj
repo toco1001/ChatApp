@@ -22,6 +22,7 @@
 		DD5D7AE91E28F9DC00EBC0F2 /* two.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5D7ADD1E28F9DC00EBC0F2 /* two.png */; };
 		DD5D7AEB1E28F9ED00EBC0F2 /* backImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD5D7AEA1E28F9ED00EBC0F2 /* backImage.jpg */; };
 		DD5D7AED1E290A5800EBC0F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD5D7AEC1E290A5800EBC0F2 /* GoogleService-Info.plist */; };
+		DD933A831E2E21E500DC44DC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD933A821E2E21E500DC44DC /* SettingViewController.swift */; };
 		DD95E2091E278C59008DC9DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD95E2081E278C59008DC9DF /* AppDelegate.swift */; };
 		DD95E20B1E278C59008DC9DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD95E20A1E278C59008DC9DF /* ViewController.swift */; };
 		DD95E20E1E278C59008DC9DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD95E20C1E278C59008DC9DF /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		DD5D7ADD1E28F9DC00EBC0F2 /* two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = two.png; path = images/two.png; sourceTree = "<group>"; };
 		DD5D7AEA1E28F9ED00EBC0F2 /* backImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backImage.jpg; sourceTree = "<group>"; };
 		DD5D7AEC1E290A5800EBC0F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD933A821E2E21E500DC44DC /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DD95E2051E278C59008DC9DF /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD95E2081E278C59008DC9DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD95E20A1E278C59008DC9DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				DD95E20A1E278C59008DC9DF /* ViewController.swift */,
 				DD49D21D1E2A45EF000848BE /* RoomViewController.swift */,
 				DDE201BF1E2B5939002364B6 /* ChatViewController.swift */,
+				DD933A821E2E21E500DC44DC /* SettingViewController.swift */,
 				DD95E20C1E278C59008DC9DF /* Main.storyboard */,
 				DD95E20F1E278C59008DC9DF /* Assets.xcassets */,
 				DD95E2111E278C59008DC9DF /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD933A831E2E21E500DC44DC /* SettingViewController.swift in Sources */,
 				DD49D21E1E2A45EF000848BE /* RoomViewController.swift in Sources */,
 				DD95E20B1E278C59008DC9DF /* ViewController.swift in Sources */,
 				DDE201C01E2B5939002364B6 /* ChatViewController.swift in Sources */,

@@ -82,7 +82,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.base64String = dataURL.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters) as String
         
         //アプリ内に保存をする
-        UserDefaults.standard.set(self.base64String, forKey: "profile_image_url")
+        UserDefaults.standard.set(self.base64String, forKey: "profile_image")
         UserDefaults.standard.set(self.name, forKey: "name")
         
         //Firebase と接続する
