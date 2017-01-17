@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import JSQMessagesViewController
+import Firebase
 
-class ChatViewController: UIViewController {
+class ChatViewController: JSQMessagesViewController {
   
   var cellNumber: Int = 0
   var roomName = String()
+  var messages: [JSQMessage] = [JSQMessage]()
+  var incomingBubble: JSQMessagesBubbleImage!
+  var outcomingBubble: JSQMessagesBubbleImage!
+  var incomingAvatar: JSQMessagesAvatarImage!
+  var outcomingAvatar: JSQMessagesAvatarImage!
   
+  var userNameLabel = String()
+  var backgroundImageView = UIImageView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+    backgroundImageView.frame = rect
+    
+    ///背景画像を反映
+    
+    
+    ///チャットをスタートさせる
+    
+    ///情報をリアルタイムで取得する
+    
+    
   }
   
   override func didReceiveMemoryWarning() {

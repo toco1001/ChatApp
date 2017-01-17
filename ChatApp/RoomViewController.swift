@@ -54,11 +54,13 @@ class RoomViewController: UIViewController {
   
 }
 
-extension RoomViewController: UITableViewDelegate {}
+extension RoomViewController: UITableViewDelegate {
+  
+}
 
 extension RoomViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return roomNameArray.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
