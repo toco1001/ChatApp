@@ -28,6 +28,15 @@ class ChatViewController: JSQMessagesViewController {
     
     let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
     backgroundImageView.frame = rect
+    
+    ///背景画像を反映
+    
+    
+    ///チャットをスタートさせる
+    
+    ///情報をリアルタイムで取得する
+    
+    
   }
   
   override func didReceiveMemoryWarning() {
