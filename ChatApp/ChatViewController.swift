@@ -12,15 +12,15 @@ import Firebase
 
 class ChatViewController: JSQMessagesViewController {
   
+  @IBOutlet weak var roomNameLabel: UILabel!
   var cellNumber: Int = 0
   var roomName = String()
   var messages: [JSQMessage] = [JSQMessage]()
   var incomingBubble: JSQMessagesBubbleImage!
-  var outcomingBubble: JSQMessagesBubbleImage!
+  var outgoingBubble: JSQMessagesBubbleImage!
   var incomingAvatar: JSQMessagesAvatarImage!
-  var outcomingAvatar: JSQMessagesAvatarImage!
-  
-  var userNameLabel = String()
+  var outgoingAvatar: JSQMessagesAvatarImage!
+  var roomNameLabelText: String!
   var backgroundImageView = UIImageView()
   
   override func viewDidLoad() {
@@ -31,12 +31,21 @@ class ChatViewController: JSQMessagesViewController {
     
     ///背景画像を反映
     
+    // roomの名前を反映
+    roomNameLabel?.text = roomNameLabelText
     
     ///チャットをスタートさせる
-    
+    chatStart()
     ///情報をリアルタイムで取得する
     
+    // Avatarがいない
+    self.collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+    self.collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
     
+  }
+  
+  func chatStart() {
+    automaticallyAdjustsScrollViewInsets = true
   }
   
   override func didReceiveMemoryWarning() {

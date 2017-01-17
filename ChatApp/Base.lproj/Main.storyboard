@@ -87,7 +87,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Talk Room" id="q3f-bV-NTQ"/>
+                    <navigationItem key="navigationItem" title="Talk Room" id="q3f-bV-NTQ">
+                        <barButtonItem key="leftBarButtonItem" title="設定" id="K4o-TC-YTD">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="bE8-jP-e52" kind="presentation" id="MBX-BE-ZW8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="a8d-AO-zif" id="p51-cs-dNj"/>
                         <segue destination="3RP-Kg-k4i" kind="push" identifier="chat" id="CgV-kU-bFT"/>
@@ -127,10 +134,31 @@
                             <color key="backgroundColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="roomNameLabel" destination="w66-XD-xaq" id="4yo-XJ-z2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ai-tb-YNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="myZ-Tv-06n">
+            <objects>
+                <viewController id="bE8-jP-e52" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Et-r3-kEY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gbM-pz-jqQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Qx-4L-T9r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7l-W1-GPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6fb-zW-EHi">
