@@ -13,6 +13,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
   var backgroundImage: UIImage?
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var profileNameLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -30,6 +31,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+  
   @IBAction func openAlbum(_ sender: Any) {
     let sourceType: UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
     if UIImagePickerController.isSourceTypeAvailable(sourceType) {
@@ -47,6 +49,16 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
       cameraPicker.sourceType = sourceType
       cameraPicker.delegate = self
       self.present(cameraPicker, animated: true, completion: nil)
+    }
+  }
+  
+  @IBAction func back(_ sender: Any) {
+    //保存をする
+    if UserDefaults.standard.object(forKey: "back_image") != nil {
+      let decodeData = UserDefaults.standard.object(forKey: "back_image")
+      let decodedData = NSData(base64Encoded: decodeData as! String, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
+      let decodedImage = UIImage(data: decodedData as! Data)
+      backgroundImage = decodedImage
     }
   }
   
