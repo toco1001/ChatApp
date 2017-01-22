@@ -60,6 +60,14 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
       let decodedImage = UIImage(data: decodedData as! Data)
       backgroundImage = decodedImage
     }
+    if backgroundImage?.size.width != 0 {
+      guard let backgroundImage = backgroundImage else {
+        return
+      }
+      guard let data: NSData = UIImageJPEGRepresentation(backgroundImage, 0.1) as NSData? else { return }
+      let base64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters) as String
+      UserDefaults.standard.set(base64String, forKey: "back_image")
+    }
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
