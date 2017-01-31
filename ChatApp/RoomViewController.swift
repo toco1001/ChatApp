@@ -17,7 +17,6 @@ class RoomViewController: UIViewController {
   var roomName = String()
   var roomImageArray = ["one.png", "two.png", "three.png", "four.png", "five.png", "six.png", "seven.png"]
   var roomNameArray = ["新入社員雑談", "助け合い広場", "業務報告", "話そう会", "東京都民憩いの場", "関西人ちょっと集ろか"]
-  
   var cellNumber: Int = 0
   
   override func viewDidLoad() {
@@ -32,7 +31,6 @@ class RoomViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "chat" {
@@ -68,13 +66,8 @@ extension RoomViewController: UITableViewDataSource {
     if let label = cell.viewWithTag(2) as? UILabel {
       roomNameLabel = label
     }
-    
     roomImageView.image = UIImage(named: roomImageArray[indexPath.row])
     roomNameLabel.text = roomNameArray[indexPath.row]
-    
-    
     return cell
   }
-  
-  
 }

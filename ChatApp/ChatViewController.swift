@@ -14,10 +14,8 @@ class ChatViewController: JSQMessagesViewController {
   
   @IBOutlet weak var roomNameLabel: UILabel!
   
-  
   var decodedImage1 = UIImage()
   var decodedImage2 = UIImage()
-  
   var cellNumber: Int = 0
   var roomName = String()
   var messages: [JSQMessage] = [JSQMessage]()
@@ -29,7 +27,6 @@ class ChatViewController: JSQMessagesViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     let rect = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
     backgroundImageView.frame = rect
     
@@ -53,11 +50,10 @@ class ChatViewController: JSQMessagesViewController {
     // Avatarがいない
     self.collectionView?.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     self.collectionView?.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-    
   }
   
   func chatStart() {
-//    inputToolbar.contentView.leftBarButtonItem = nil
+    inputToolbar.contentView.leftBarButtonItem = nil
     automaticallyAdjustsScrollViewInsets = true
     if UserDefaults.standard.object(forKey: "name") != nil {
       self.senderId = FIRAuth.auth()?.currentUser?.uid
