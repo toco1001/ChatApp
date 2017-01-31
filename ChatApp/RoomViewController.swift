@@ -24,7 +24,6 @@ class RoomViewController: UIViewController {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
-    
     tableView.reloadData()
     // Do any additional setup after loading the view.
   }
@@ -42,7 +41,9 @@ class RoomViewController: UIViewController {
       chatVC.roomName = roomName
     }
   }
-  
+}
+
+extension RoomViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     cellNumber = indexPath.row
     roomName = roomNameArray[indexPath.row]
@@ -50,12 +51,6 @@ class RoomViewController: UIViewController {
     //プッシュで画面遷移
     performSegue(withIdentifier: "chat", sender: nil)
   }
-  
-  
-}
-
-extension RoomViewController: UITableViewDelegate {
-  
 }
 
 extension RoomViewController: UITableViewDataSource {
