@@ -54,6 +54,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
   
   @IBAction func back(_ sender: Any) {
     //保存をする
+    self.dismiss(animated: true, completion: nil)
     if UserDefaults.standard.object(forKey: "back_image") != nil {
       let decodeData = UserDefaults.standard.object(forKey: "back_image")
       let decodedData = NSData(base64Encoded: decodeData as! String, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)

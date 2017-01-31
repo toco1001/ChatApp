@@ -119,6 +119,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="wAU-TL-nwc">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="m1U-cg-Qoq">
+                            <connections>
+                                <action selector="back:" destination="3RP-Kg-k4i" id="ji5-DH-KlH"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="DrD-hZ-Gyd">
                             <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,7 +136,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
                     <connections>
